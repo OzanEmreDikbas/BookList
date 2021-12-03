@@ -14,32 +14,32 @@ function createBook(title, author, isbn) {
   };
 }
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const bookTitle = title.value;
-  const bookAuthor = author.value;
-  const bookIsbn = isbn.value;
-  const book = createBook(bookTitle, bookAuthor, bookIsbn);
-  console.log(book);
-  if (!(book.title && book.author && book.isbn)) {
-    alert("Check The form fields");
-  } else {
-    bookList.innerHTML += `<tr>
-                              <td>${book.title}</td>
-                              <td>${book.author}</td>
-                              <td>${book.isbn}</td>
-                              <td><button type="button" class="btn btn-danger">Delete</button></td>
-            </tr>
-    `;
-  }
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   const bookTitle = title.value;
+//   const bookAuthor = author.value;
+//   const bookIsbn = isbn.value;
+//   const book = createBook(bookTitle, bookAuthor, bookIsbn);
+//   console.log(book);
+//   if (!(book.title && book.author && book.isbn)) {
+//     alert("Check The form fields");
+//   } else {
+//     bookList.innerHTML += `<tr>
+//                               <td>${book.title}</td>
+//                               <td>${book.author}</td>
+//                               <td>${book.isbn}</td>
+//                               <td><button type="button" class="btn btn-danger">Delete</button></td>
+//             </tr>
+//     `;
+//   }
 
-  bookList.addEventListener("click", (e) => {
-    if (e.target.classList.contains("btn-danger")) {
-      e.target.closest("tr").remove();
-    }
-  });
-  form.reset();
-});
+//   bookList.addEventListener("click", (e) => {
+//     if (e.target.classList.contains("btn-danger")) {
+//       e.target.closest("tr").remove();
+//     }
+//   });
+//   form.reset();
+// });
 
 searchBox.addEventListener("keyup", () => {
   const searchKey = searchBox.value.toLowerCase();
